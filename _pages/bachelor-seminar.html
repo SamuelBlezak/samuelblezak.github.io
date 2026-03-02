@@ -7,6 +7,37 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.teaching reversed %}
+<div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+  <h2>Základné informácie</h2>
+  <ul>
+    <li><strong>Meno študenta:</strong> Samuel Blezak</li>
+    <li><strong>Názov práce:</strong> [Doplň názov svojej práce]</li>
+    <li><strong>Meno školiteľa:</strong> [Doplň meno školiteľa]</li>
+    <li><strong>Kontakt:</strong> [Doplň svoj email]</li>
+  </ul>
+</div>
+
+<h2>Zadanie práce</h2>
+<p><strong>Anotácia:</strong> Sem vlož text anotácie z AISu...</p>
+<p><strong>Cieľ:</strong> Sem vlož ciele zo zadania v AISe...</p>
+
+<hr>
+
+<h2>Zdroje a odkazy</h2>
+<ul>
+  <li><a href="#">Odkaz na článok/manuál</a> - Stručný popis</li>
+</ul>
+
+<h2>Priebežné výstupy</h2>
+<ul>
+  <li><a href="#">Odkaz na GitHub (zdrojáky)</a></li>
+  <li><a href="#">Screenshoty/Texty</a></li>
+</ul>
+
+<hr>
+
+<h2>Denník (Týždenné aktualizácie)</h2>
+
+{% for post in site.bachelor-seminar reversed %}
   {% include archive-single.html %}
 {% endfor %}
