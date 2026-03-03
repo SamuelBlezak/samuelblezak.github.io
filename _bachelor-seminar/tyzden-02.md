@@ -6,4 +6,6 @@ permalink: /bachelor-seminar/week1
 ---         
 
 **Čo som tento týždeň urobil:**
-* Práca na vytvorení GitHub stránky
+* Pokračovanie spracovania stránky na bakalársky seminár
+* Vytvorenie GitHub repozitára bakalárskej práce
+* Práca na implementácii algoritmu
