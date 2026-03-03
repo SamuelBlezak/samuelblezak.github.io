@@ -5,5 +5,10 @@ collection: bachelor-seminar
 permalink: /bachelor-seminar/week1
 ---         
 
+**Denník aktualizovaný:** 2024-02-12
+
 **Čo som tento týždeň urobil:**
-* Práca na vytvorení GitHub stránky
+* [Popis aktivity]
+
+**Plán na ďalší týždeň:**
+* [Popis plánu]
