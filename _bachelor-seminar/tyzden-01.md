@@ -1,6 +1,6 @@
 ---
 title: 'Týždeň 01'
-date: 2026-03-03
+date: 2026-03-02
 collection: bachelor-seminar
 permalink: /bachelor-seminar/week1
 ---         
