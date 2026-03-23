@@ -1,5 +1,5 @@
 ---
-title: 'Týždeň 02'
+title: 'Týždeň 03'
 date: 2026-03-11
 collection: bachelor-seminar
 permalink: /bachelor-seminar/week3
