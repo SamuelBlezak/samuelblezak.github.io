@@ -1,6 +1,6 @@
 ---
-title: 'Týždeň 08'
-date: 2026-04-26
+title: 'Týždeň 10'
+date: 2026-05-10
 collection: bachelor-seminar
 permalink: /bachelor-seminar/week7
 ---         
