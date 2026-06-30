@@ -1,0 +1,91 @@
+import React, { useState, useEffect } from 'react'
+import './index.css'
+
+import ProjectCard from './components/ProjectCard'
+import Footer from './components/Footer'
+import { myProjects } from './data/projects';
+
+
+const mySkills = ["Java", "Python", "C#"]
+
+function App() {
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300">
+      
+      {/* Pridané relative, aby sme v ňom mohli absolútne pozicovať tlačidlo */}
+      <div className="flex-1 w-full max-w-4xl mx-auto p-6 md:p-12">
+        
+        {/* TLAČIDLO NA PREPÍNANIE */}
+        <button
+          onClick={() => setIsDarkMode(!isDarkMode)}
+          className="fixed top-4 right-4 text-xl bg-gray-200 dark:bg-gray-700 p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors z-50"
+          title="Prepnúť tmavý režim"
+        >
+          {isDarkMode ? '☀️' : '🌙'}
+        </button>
+
+        {/* Úprava nadpisov, aby v tme vyzerali dobre */}
+        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">Samuel Bležák</h1>
+        <p className="text-lg text-gray-600 dark:text-gray-400 mb-10">Študent aplikovanej informatiky</p>
+      
+      <h2 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white mb-2">Projekty</h2>
+      
+      <h2 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white mb-2">Na čom momentálne pracujem</h2>
+      {myProjects
+        .filter(project => project.inProgress === true) // filter ci sa momentalne na projekte pracuje
+        .map(project => (
+          <ProjectCard 
+            key={project.id}
+            title={project.title}
+            tech={project.tech}
+            description={project.description}
+            link={project.link}
+            imageUrl={project.imageUrl}
+          />
+        ))}
+
+      <h2 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white mb-2">Už dokončené projekty</h2>
+      {myProjects
+        .filter(project => project.inProgress === false) // filter ci sa momentalne na projekte nepracuje (ci je dokoncenynpm install -D @tailwindcss/postcss)
+        .map(project => (
+          <ProjectCard 
+            key={project.id}
+            title={project.title}
+            tech={project.tech}
+            description={project.description}
+            link={project.link}
+            imageUrl={project.imageUrl}
+          />
+        ))}
+
+      <h2 className="text-2xl font-bold text-gray-900 mb-4">Moje Zručnosti</h2>
+        <div className="flex flex-wrap gap-2 mb-12">
+          {mySkills.map((skill, index) => (
+            <span 
+              key={index} 
+              className="bg-blue-100 text-blue-800 px-4 py-1.5 rounded-full text-sm font-semibold"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+
+      
+      </div>
+      <Footer />
+    </div>
+  )
+}
+
+export default App
