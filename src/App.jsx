@@ -22,18 +22,24 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans transition-colors duration-300">
-      
-      {/* Pridané relative, aby sme v ňom mohli absolútne pozicovať tlačidlo */}
-      <div className="flex-1 w-full max-w-4xl mx-auto p-6 md:p-12">
-        
+
+      {/* TOP BAR */}
+      <header className="fixed top-0 left-0 right-0 h-14 z-50 flex items-center justify-between px-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur border-b border-gray-200 dark:border-gray-700">
+        {/* Meno v ľavom hornom rohu */}
+        <span className="text-lg font-bold text-gray-900 dark:text-white">Samuel Bležák</span>
+
         {/* TLAČIDLO NA PREPÍNANIE */}
         <button
           onClick={() => setIsDarkMode(!isDarkMode)}
-          className="fixed top-4 right-4 text-xl bg-gray-200 dark:bg-gray-700 p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors z-50"
+          className="text-xl bg-gray-200 dark:bg-gray-700 p-2 rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
           title="Prepnúť tmavý režim"
         >
           {isDarkMode ? '☀️' : '🌙'}
         </button>
+      </header>
+
+      {/* pt-14 aby obsah nebol schovaný pod fixným top barom */}
+      <div className="flex-1 w-full max-w-4xl mx-auto p-6 md:p-12 pt-20">
 
         {/* Úprava nadpisov, aby v tme vyzerali dobre */}
         <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">Samuel Bležák</h1>
