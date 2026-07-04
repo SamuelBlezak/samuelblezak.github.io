@@ -4,6 +4,7 @@ import './index.css'
 import ProjectCard from './components/ProjectCard'
 import Footer from './components/Footer'
 import { myProjects } from './data/projects';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 
 const mySkills = ["Java", "Python", "C#"]
@@ -25,8 +26,38 @@ function App() {
 
       {/* TOP BAR */}
       <header className="fixed top-0 left-0 right-0 h-14 z-50 flex items-center justify-between px-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur border-b border-gray-200 dark:border-gray-700">
-        {/* Meno v ľavom hornom rohu */}
-        <span className="text-lg font-bold text-gray-900 dark:text-white">Samuel Bležák</span>
+        {/* Meno + odkazy v ľavom hornom rohu */}
+        <div className="flex items-center gap-4">
+          <span className="text-lg font-bold text-gray-900 dark:text-white">Samuel Bležák</span>
+
+          <div className="flex items-center gap-3 text-xl text-gray-600 dark:text-gray-300">
+            <a
+              href="https://github.com/SamuelBlezak"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+              className="hover:text-black dark:hover:text-white transition-colors"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/samuelblezak"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="mailto:samkoblezi@gmail.com"
+              title="Email"
+              className="hover:text-red-500 dark:hover:text-red-400 transition-colors"
+            >
+              <FaEnvelope />
+            </a>
+          </div>
+        </div>
 
         {/* TLAČIDLO NA PREPÍNANIE */}
         <button
@@ -42,7 +73,7 @@ function App() {
       <div className="flex-1 w-full max-w-4xl mx-auto p-6 md:p-12 pt-20">
 
         {/* Úprava nadpisov, aby v tme vyzerali dobre */}
-        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-2">Samuel Bležák</h1>
+        <h1 className="pt-8 text-4xl font-extrabold text-gray-900 dark:text-white mb-2">Samuel Bležák</h1>
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-10">Študent aplikovanej informatiky</p>
       
       <h2 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white mb-2">Projekty</h2>
