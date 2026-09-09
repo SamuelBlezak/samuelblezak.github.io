@@ -7,8 +7,7 @@ function Footer() {
       
       {/* Vnútorný div zarovná text presne s tvojimi projektmi (max-w-4xl mx-auto) */}
       <div className="max-w-4xl mx-auto px-6 md:px-12">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Kontaktujte ma</h2>
-        <p className="text-gray-600 dark:text-gray-300 mb-4">Máte záujem o spoluprácu alebo stáž? Ozvite sa mi:</p>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Kontakt</h2>
         
         <ul className="space-y-2 text-gray-800 dark:text-gray-200">
           <li>

@@ -26,4 +26,13 @@ export const myProjects = [
     inProgress: true,
     imageUrl: null
   },
+  {
+    id: 4,
+    title: "SiteBlocker",
+    tech: "JavaScript",
+    description: "Website extension for blocking sites added by user of the extension.",
+    link: null,
+    inProgress: true,
+    imageUrl: null
+  },
 ]

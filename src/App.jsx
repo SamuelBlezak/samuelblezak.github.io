@@ -78,7 +78,7 @@ function App() {
       
       <h2 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white mb-2">Projekty</h2>
       
-      <h2 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white mb-2">Na čom momentálne pracujem</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white mb-2">Aktuálne projekty</h2>
       {myProjects
         .filter(project => project.inProgress === true) // filter ci sa momentalne na projekte pracuje
         .map(project => (
@@ -92,7 +92,7 @@ function App() {
           />
         ))}
 
-      <h2 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white mb-2">Už dokončené projekty</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-4 dark:text-white mb-2">Predošlé projekty</h2>
       {myProjects
         .filter(project => project.inProgress === false) // filter ci sa momentalne na projekte nepracuje (ci je dokoncenynpm install -D @tailwindcss/postcss)
         .map(project => (
