@@ -1,8 +1,10 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
+import { t } from '../data/translations'
+
 import Socials from './Socials'
 
-export default function Header() {
+export default function Header(prop) {
     return(
         <footer className="w-full border-t border-gray-200 py-8 mt-10">
 
@@ -15,7 +17,7 @@ export default function Header() {
                 </div>
 
                  <p className="text-sm text-gray-500 ">
-                    © {new Date().getFullYear()} Samuel Bležák. Vytvorené v Reacte
+                    © {new Date().getFullYear()} Samuel Bležák. {t[prop.lang].footer}
                 </p>
             </div>
             

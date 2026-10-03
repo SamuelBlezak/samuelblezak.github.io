@@ -1,4 +1,4 @@
-export const translations = {
+export const t = {
     sk: {
         projects: "Projekty", footer: "Vytvorené v Reacte",
     },

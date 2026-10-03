@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 import Socials from './Socials'
 
-export default function Header() {
+export default function Header(props) {
     return(
         <header className="border-b border-gray-200 bg-white/80 flex">
 
@@ -16,6 +16,10 @@ export default function Header() {
             
             </div>
             
+            <button className="cursor-pointer" 
+            onClick={() => props.setLang(props.lang === 'en' ? 'sk' : 'en')}>
+                {props.lang === 'en' ? 'EN' : 'SK'}
+            </button>
         </header>
     )
 }
