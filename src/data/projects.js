@@ -5,14 +5,22 @@ export const projects = [
         tech: "JavaScript, Chrome Manifest V3",
         description: "MASTER BAITER",
         url: "",
-        img: "public/siteblock.png"
+        img: "/siteblock.png"
     },
     {
-        id: 1,
+        id: 2,
         title: "Procedural Generation of Tree Models",
         tech: "C#, Unity Engine",
         description: "MASTER BAITER",
         url: "https://github.com/SamuelBlezak/ProceduralGenerationOfTreeModels",
-        img: "public/tree.png"
+        img: "/tree.png"
+    },
+    {
+        id: 3,
+        title: "Dialava",
+        tech: "C++, Blueprints, Unreal Engine",
+        description: "MASTER BAITER",
+        url: "https://github.com/SamuelBlezak/Dialava",
+        img: "/dialava.png"
     }
 ]

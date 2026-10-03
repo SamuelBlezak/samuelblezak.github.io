@@ -1,6 +1,8 @@
-export default function Socials(social) {
-    const Icon = social.icon
+export default function Socials(prop) {
+
+    const Icon = prop.icon
+
     return(
-        <a href={social.link} title={social.title}><Icon /></a>
+        <a href={prop.link} title={prop.title}><Icon /></a>
     )
 }
