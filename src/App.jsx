@@ -26,6 +26,7 @@ function App() {
             title={projects[0].title}
             tech={projects[0].tech}
             description={projects[0].description}
+            url={projects[0].url}
             img={projects[0].img}
           />
 
