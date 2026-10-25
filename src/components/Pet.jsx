@@ -4,6 +4,7 @@ import { doc, onSnapshot, updateDoc, increment } from 'firebase/firestore'
 import { db } from '../firebase'
 
 import PixelCat from './PixelCat'
+import PixelIcon from './PixelIcon'
 
 const statsRef = doc(db, 'pet', 'stats')
 
@@ -44,19 +45,33 @@ export default function Pet(props) {
         }, 2000);
     }
 
-    return(
-        <div>
-            <PixelCat mode={mode} scale={6}></PixelCat>
-            <p>{t[props.lang].fed}: {feeds}x</p>
-            <p>{t[props.lang].petted}: {pets}x</p>
+    return (
+      <div className="flex flex-col items-center">
+        <PixelCat mode={mode} scale={6}></PixelCat>
 
-            <button className="ml-auto mr-6 px-4 py-2 cursor-pointer inline-block bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-400 transition-colors disabled:opacity-50" 
-            onClick={handleFeed} disabled={busy}>{t[props.lang].petFeed}
-            </button>
+        <div className="flex gap-3">
+          <button
+            onClick={handleFeed}
+            disabled={busy}
+            aria-label={t[props.lang].petFeed}
+            title={t[props.lang].petFeed}
+            className="flex flex-col items-center gap-1 cursor-pointer transition-transform hover:scale-110 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-800 rounded"
+          >
+            <PixelIcon name="bowl" scale={2} />
+            <span className="text-sm font-bold tabular-nums">{feeds}</span>
+          </button>
 
-            <button className="ml-auto mr-6 px-4 py-2 cursor-pointer inline-block bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-400 transition-colors disabled:opacity-50" 
-            onClick={handlePet} disabled={busy} >{t[props.lang].petPet}
-            </button>
+          <button
+            onClick={handlePet}
+            disabled={busy}
+            aria-label={t[props.lang].petPet}
+            title={t[props.lang].petPet}
+            className="flex flex-col items-center gap-1 cursor-pointer transition-transform hover:scale-110 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gray-800 rounded"
+          >
+            <PixelIcon name="hand" scale={2} />
+            <span className="text-sm font-bold tabular-nums">{pets}</span>
+          </button>
         </div>
-    )
+      </div>
+    );
 }

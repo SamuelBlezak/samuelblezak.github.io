@@ -104,3 +104,47 @@ export function drawFrame(ctx, frame, scale) {
     ctx.fillRect(x * scale, y * scale, scale, scale);
   }));
 }
+
+// ===== Pixel ikony pre tlačidlá =====
+export const ICON_PALETTE = {
+  o: '#2a2422', // obrys
+  R: '#c94a3f', // miska
+  r: '#8f2e27', // tieň misky
+  w: '#e8786e', // odlesk misky
+  F: '#c08a45', // granule
+  f: '#7d5527', // granule tmavé
+  S: '#f2c9a0', // koža
+  s: '#d9a77c', // tieň kože
+  H: '#e5475b', // srdiečko
+};
+ 
+export const ICONS = {
+  bowl: [
+    ".....oooo.....",
+    "...ooFfFFoo...",
+    "..oFFfFFfFFo..",
+    ".oooooooooooo.",
+    "oRRRRRRRRRRRRo",
+    "oRwRRRRRRRRRRo",
+    ".oRRRRRRRRRRo.",
+    "..orrrrrrrro..",
+    "...oooooooo...",
+  ],
+  hand: [
+    "...............",
+    "......oo.......",
+    ".....oSSooo....",
+    "...oooSSoSSo...",
+    "..oSSoSSoSSooo.",
+    "..oSSoSSoSSoSSo",
+    ".ooSSoSSoSSoSSo",
+    "oSSSSoSSoSSoSSo",
+    "oSSSSoSSoSSoSSo",
+    "oSSSSSHHSHHSSSo",
+    "oSSSSSHHHHHSSSo",
+    ".oSSSSSHHHSSSSo",
+    ".osSSSSSHSSSSSo",
+    "..ossssssssssso",
+    "..oooooooooooo.",
+  ],
+};
