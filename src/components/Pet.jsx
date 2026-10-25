@@ -1,17 +1,30 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import { t } from '../data/translations'
+import { doc, onSnapshot, updateDoc, increment } from 'firebase/firestore'
+import { db } from '../firebase'
 
 import PixelCat from './PixelCat'
+
+const statsRef = doc(db, 'pet', 'stats')
 
 export default function Pet(props) {
     const [mode, setMode] = useState('idle');
     const [feeds, setFeeds] = useState(0);
     const [pets, setPets] = useState(0);
     const [busy, setBusy] = useState(false);
- 
+
+    useEffect(() => {
+        const unsubscribe = onSnapshot(statsRef, (snap) => {
+            const data = snap.data()
+            setPets(data.pets)
+            setFeeds(data.feeds)
+        })
+        return unsubscribe
+    }, [])
+
     function handleFeed() {
         setMode('eating');
-        setFeeds(f => f + 1);
+        updateDoc(statsRef, { feeds: increment(1) })
         setBusy(true);
 
         setTimeout(() => {
@@ -22,7 +35,7 @@ export default function Pet(props) {
 
     function handlePet() {
         setMode('petted');
-        setPets(p => p + 1);
+        updateDoc(statsRef, { pets: increment(1) })
         setBusy(true);
 
         setTimeout(() => {
@@ -33,9 +46,9 @@ export default function Pet(props) {
 
     return(
         <div>
-            <PixelCat mode={mode}></PixelCat>
-            <p>Nakŕmený: {feeds}x</p>
-            <p>Pohladený: {pets}x</p>
+            <PixelCat mode={mode} scale={6}></PixelCat>
+            <p>{t[props.lang].fed}: {feeds}x</p>
+            <p>{t[props.lang].petted}: {pets}x</p>
 
             <button className="ml-auto mr-6 px-4 py-2 cursor-pointer inline-block bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-400 transition-colors disabled:opacity-50" 
             onClick={handleFeed} disabled={busy}>{t[props.lang].petFeed}

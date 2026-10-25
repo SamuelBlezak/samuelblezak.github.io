@@ -51,7 +51,11 @@ function App() {
         
         </div>
       </div>
-      <Pet lang={lang}></Pet>
+
+      <div className="hidden xl:flex flex-col items-center gap-3 absolute top-20 right-6">
+        <Pet lang={lang}></Pet>
+      </div>
+
       <Footer lang={lang}/>
     </>
   )
