@@ -6,7 +6,7 @@ import Socials from './Socials'
 
 export default function Header(prop) {
     return(
-        <footer className="w-full border-t border-gray-200 py-8 mt-10">
+        <footer className="w-full border-t border-gray-200 py-8">
 
             <div className="max-w-4xl mx-auto px-6 md:px-12">
 
